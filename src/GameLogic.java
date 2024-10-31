@@ -29,6 +29,15 @@ public class GameLogic {
 
     public boolean canMoveBrick(int brick) {
         // Kolla om brickan kan flyttas på
+        int [] brickPos = findPosition(brick);
+        int [] emptyPos = findPosition(0);
+
+        int brickRow = brickPos[0];
+        int brickCol = brickPos[1];
+        int emptyRow = emptyPos[0];
+        int emptyCol = emptyPos[1];
+
+        
         return true;
     }
 
