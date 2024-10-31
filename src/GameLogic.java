@@ -14,8 +14,16 @@ public class GameLogic {
         ArrayList<Integer> numbers = new ArrayList<>();
         for (int i = 1; i <= 15; i++) numbers.add(i);
         numbers.add(0); // Lägg till 0 för tom plats
-        Collections.shuffle(numbers);
-        // Initiera spelet med nummer och blanda dem
+        Collections.shuffle(numbers); // Blanda listan
+
+        // Fyll board arrayen med värdena från numbers
+        int index = 0;
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                board[row][col] = numbers.get(index);
+                index++;
+            }
+        }
     }
 
     public boolean canMoveBrick(int brick) {
