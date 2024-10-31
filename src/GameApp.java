@@ -15,6 +15,8 @@ public class GameApp extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new FlowLayout());
+        setVisible(true);
+
     }
 
 
