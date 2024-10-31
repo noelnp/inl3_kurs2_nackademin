@@ -9,6 +9,7 @@ public class GameLogic {
     public GameLogic() {
         board = new int[4][4];
         initBoard();
+        runTests();
     }
 
     private void initBoard() {
@@ -75,4 +76,34 @@ public class GameLogic {
         // Kolla om spelet är avklarat
         return true;
     }
+
+    public void printBoard() {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                System.out.print(board[row][col] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+
+
+    public void runTests() {
+        // Skriv ut det initierade och blandade brädet för att se hur det ser ut
+        System.out.println("Initial board:");
+        printBoard();
+
+        // Testa findPosition för att hitta en bricka, t.ex. bricka 1
+        int[] position = findPosition(1);
+        if (position != null) {
+            System.out.println("Position of brick 1: Row = " + position[0] + ", Column = " + position[1]);
+        } else {
+            System.out.println("Brick 1 not found.");
+        }
+
+        // Testa canMoveBrick för att se om bricka 1 kan flyttas
+        boolean canMove = canMoveBrick(1);
+        System.out.println("Can move brick 1: " + canMove);
+    }
+
 }
