@@ -1,11 +1,20 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class GameLogic {
     private int[][] board;
 
+
     public GameLogic() {
+        board = new int[4][4];
         initBoard();
     }
 
     private void initBoard() {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        for (int i = 1; i <= 15; i++) numbers.add(i);
+        numbers.add(0); // Lägg till 0 för tom plats
+        Collections.shuffle(numbers);
         // Initiera spelet med nummer och blanda dem
     }
 
