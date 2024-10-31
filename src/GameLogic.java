@@ -28,20 +28,33 @@ public class GameLogic {
     }
 
     public boolean canMoveBrick(int brick) {
-        // Kolla om brickan kan flyttas på
-        int [] brickPos = findPosition(brick);
-        int [] emptyPos = findPosition(0);
+        //ser till att brickan är inom korrekt intervall
+        if (brick < 1 || brick > 15){
+            return false;
+        }
+        //Brickans positionering
+        int [] targetPos = findPosition(brick);
+        //Den tomma platsens positionering
+        int [] blankPos = findPosition(0);
 
-        int brickRow = brickPos[0];
-        int brickCol = brickPos[1];
-        int emptyRow = emptyPos[0];
-        int emptyCol = emptyPos[1];
+        //felhantering ifall vi inte hittar positionerna
+        if (targetPos == null || blankPos == null) {
+            return false;
+        }
 
-        
-        return true;
+        int targetRow = targetPos[0];
+        int targetCol = targetPos[1];
+        int blankRow = blankPos[0];
+        int blankCol = blankPos[1];
+        // håller koll på att brickan är intill den tomma platsen
+        return (targetRow == blankRow - 1 && targetCol == blankCol) ||
+                (targetRow == blankRow + 1 && targetCol == blankCol) ||
+                (targetRow == blankRow && targetCol == blankCol -1) ||
+                (targetRow == blankRow && targetCol == blankCol +1);
+
     }
 
-    public int[][] findPosition(int value) {
+    public int[] findPosition(int value) {
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 if (board[row] [col] == value) {
