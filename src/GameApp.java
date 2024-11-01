@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.lang.String.valueOf;
 
 public class GameApp extends JFrame implements ActionListener {
 
@@ -43,9 +42,6 @@ public class GameApp extends JFrame implements ActionListener {
             }
         }
     }
-
-
-
 
 
 
