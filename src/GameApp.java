@@ -9,6 +9,7 @@ public class GameApp extends JFrame implements ActionListener {
     private JButton[][] buttons = new JButton[4][4];
     private GameLogic gameLogic;
     private JPanel boardPanel;
+    private JButton specialSetupButton;
 
 
     public GameApp() {
@@ -30,6 +31,15 @@ public class GameApp extends JFrame implements ActionListener {
         //Skapar panelen med GridLayout
         boardPanel = new JPanel(new GridLayout(4,4));
         add(boardPanel,BorderLayout.CENTER);
+
+        //Skapar knappen till specialinställningen
+        specialSetupButton = new JButton("Specialinställning");
+        specialSetupButton.addActionListener(e -> {
+            gameLogic.setupWinningBoard();
+            updateBoard();
+        });
+        add(specialSetupButton,BorderLayout.SOUTH);
+
     }
 
     private void initializeBoard(){

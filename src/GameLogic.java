@@ -137,4 +137,21 @@ public class GameLogic {
         System.out.println("Can move brick 1: " + canMove);
     }
 
+
+    //Skapar metod för specialinställning i spelet
+    public void setupWinningBoard(){
+
+        int count = 1;
+
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                if (row == 3 && col == 3){
+                    board[row][col] = 0; // En tom plats längst ner till höger
+                } else {
+                    board[row][col] = count++;
+                }
+            }
+        }
+    }
+
 }
