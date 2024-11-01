@@ -28,7 +28,7 @@ public class GameLogic {
         }
     }
 
-    private boolean canMoveBrick(int brick) {
+    public boolean canMoveBrick(int brick) {
         //ser till att brickan är inom korrekt intervall
         if (brick < 1 || brick > 15){
             return false;
@@ -55,7 +55,7 @@ public class GameLogic {
 
     }
 
-    public int[] findPosition(int value) {
+    private int[] findPosition(int value) {
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 if (board[row] [col] == value) {
