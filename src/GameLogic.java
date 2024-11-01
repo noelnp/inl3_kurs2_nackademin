@@ -69,7 +69,15 @@ public class GameLogic {
     }
 
     public void moveBrick(int brick) {
-        // Flytta brickan om det är möjligt
+        if (canMoveBrick(brick)) {
+             int[] brickPosition = findPosition(brick);
+             int[] blankPosition = findPosition(0);
+
+            board[blankPosition[0]][blankPosition[1]] = brick;
+            board[brickPosition[0]][brickPosition[1]] = 0;
+        } else {
+            System.out.println("Brickan kan ej flyttas på.");
+        }
     }
 
     public boolean isSolved() {
