@@ -73,7 +73,28 @@ public class GameLogic {
     }
 
     public boolean isSolved() {
-        // Kolla om spelet är avklarat
+        int expectedValue = 1; // Börjar från 1
+
+
+        //Gå igenom hela brädet rad för rad, kolumn för kolumn
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+
+               //Om vi når den sista rutan, den ska vara 0
+                if(row == 3 && col == 3){
+                    return board[row][col] == 0;
+                }
+
+                // Kollar om värdet matchar förväntat värde
+                if (board[row][col] != expectedValue) {
+                    return false;
+                }
+                expectedValue++;
+
+            }
+        }
+
+
         return true;
     }
 
