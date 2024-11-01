@@ -119,12 +119,6 @@ public class GameLogic {
         }
     }
 
-    public int[][] getBoard() {
-        return board;
-    }
-
-
-
     private void runTests() {
         // Skriv ut det initierade och blandade brädet för att se hur det ser ut
         System.out.println("Initial board:");
