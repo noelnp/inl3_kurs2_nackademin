@@ -20,6 +20,14 @@ public class GameApp extends JFrame implements ActionListener {
 
     }
 
+    private void initializeBoard() {
+
+    }
+
+    private void updateBoard() {
+
+    }
+
     private void setupFrame(){
         setTitle("15-Spel");
         setSize(400,450);
@@ -30,6 +38,7 @@ public class GameApp extends JFrame implements ActionListener {
         boardPanel = new JPanel(new GridLayout(4,4));
         add(boardPanel,BorderLayout.CENTER);
     }
+
 
 
     @Override
