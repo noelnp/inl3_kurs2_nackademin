@@ -3,7 +3,7 @@ import java.util.Collections;
 
 
 public class GameLogic {
-    private int[][] board;
+    int[][] board;
 
 
     public GameLogic() {
@@ -113,6 +113,10 @@ public class GameLogic {
             }
             System.out.println();
         }
+    }
+
+    public int[][] getBoard() {
+        return board;
     }
 
 
