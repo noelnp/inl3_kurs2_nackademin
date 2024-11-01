@@ -115,6 +115,10 @@ public class GameLogic {
         }
     }
 
+    public int[][] getBoard() {
+        return board;
+    }
+
 
 
     private void runTests() {
