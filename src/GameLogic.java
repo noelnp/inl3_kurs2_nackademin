@@ -3,7 +3,7 @@ import java.util.Collections;
 
 
 public class GameLogic {
-    private int[][] board;
+    int[][] board;
 
 
     public GameLogic() {

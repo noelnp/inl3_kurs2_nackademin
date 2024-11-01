@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static java.lang.String.valueOf;
+
 public class GameApp extends JFrame implements ActionListener {
 
     private JButton[][] buttons = new JButton[4][4];
@@ -47,7 +49,16 @@ public class GameApp extends JFrame implements ActionListener {
 
 
 
-    private void updateBoard(){}
+    private void updateBoard(){
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                int value = gameLogic.board[row][col];
+                buttons[row][col].setText(value == 0 ? "" : String.valueOf(value));
+            }
+        }
+
+
+    }
 
 
     @Override
