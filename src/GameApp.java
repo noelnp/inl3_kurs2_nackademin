@@ -6,12 +6,12 @@ import java.awt.event.ActionListener;
 public class GameApp extends JFrame implements ActionListener {
 
     private JButton[][] buttons = new JButton[4][4];
-   // private GameLogic gameLogic;
+    private GameLogic gameLogic;
     private JPanel boardPanel;
 
 
     public GameApp() {
-        // gameLogic = new GameLogic();
+        gameLogic = new GameLogic();
         setupFrame();
         initializeBoard();
         updateBoard();
@@ -30,6 +30,24 @@ public class GameApp extends JFrame implements ActionListener {
         boardPanel = new JPanel(new GridLayout(4,4));
         add(boardPanel,BorderLayout.CENTER);
     }
+
+    private void initializeBoard(){
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                buttons[row][col] = new JButton();
+                buttons[row][col].setFont(new Font("Arial", Font.BOLD, 20));
+                buttons[row][col].addActionListener(this);
+                boardPanel.add(buttons[row][col]);
+            }
+        }
+    }
+
+
+
+
+
+
+    private void updateBoard(){}
 
 
     @Override
