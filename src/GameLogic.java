@@ -28,7 +28,7 @@ public class GameLogic {
         }
     }
 
-    public boolean canMoveBrick(int brick) {
+    private boolean canMoveBrick(int brick) {
         //ser till att brickan är inom korrekt intervall
         if (brick < 1 || brick > 15){
             return false;
@@ -117,7 +117,7 @@ public class GameLogic {
 
 
 
-    public void runTests() {
+    private void runTests() {
         // Skriv ut det initierade och blandade brädet för att se hur det ser ut
         System.out.println("Initial board:");
         printBoard();
