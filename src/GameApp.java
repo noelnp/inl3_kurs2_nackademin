@@ -46,14 +46,16 @@ public class GameApp extends JFrame implements ActionListener {
 
 
     private void updateBoard(){
+        int[][] board = gameLogic.getBoard();  // getBoard istället för direkt access
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
-                int value = gameLogic.board[row][col];
-                buttons[row][col].setText(value == 0 ? "" : String.valueOf(value));
+                int value = board[row][col];
+                buttons[row][col].setText(value == 0 ? "" : String.valueOf(value));  // Visa tom ruta för 0
+                buttons[row][col].setOpaque(true);  // Gör knappen helt opak
+                buttons[row][col].setBorder(BorderFactory.createLineBorder(Color.WHITE));
+                buttons[row][col].setBackground(value == 0 ? Color.WHITE : Color.LIGHT_GRAY);  // Sätt färger
             }
         }
-
-
     }
 
 
