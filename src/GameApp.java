@@ -20,13 +20,6 @@ public class GameApp extends JFrame implements ActionListener {
 
     }
 
-    private void initializeBoard() {
-
-    }
-
-    private void updateBoard() {
-
-    }
 
     private void setupFrame(){
         setTitle("15-Spel");
@@ -39,7 +32,10 @@ public class GameApp extends JFrame implements ActionListener {
         add(boardPanel,BorderLayout.CENTER);
     }
 
-    private void initializeBoard(){
+
+
+
+    private void initializeBoard() {
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 buttons[row][col] = new JButton();
@@ -48,14 +44,15 @@ public class GameApp extends JFrame implements ActionListener {
                 boardPanel.add(buttons[row][col]);
             }
         }
+
+    }
+
+    private void updateBoard() {
+
     }
 
 
 
-
-
-
-    private void updateBoard(){}
 
 
 
