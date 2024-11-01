@@ -59,6 +59,23 @@ public class GameApp extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        JButton clickedButton = (JButton) e.getSource();
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                if (buttons[row][col] == clickedButton) {
+                    int brick = gameLogic.board[row][col];
+                    if (gameLogic.canMoveBrick(brick)) {
+                        gameLogic.moveBrick(brick);
+                        updateBoard();
+                    }
+                    if (gameLogic.isSolved()) {
+                        JOptionPane.showMessageDialog(this, "Grattis, du vann!");
+                    }
+                    return;
+                }
+            }
+        }
+
 
     }
 }
