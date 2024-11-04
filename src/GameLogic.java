@@ -9,7 +9,6 @@ public class GameLogic {
     public GameLogic() {
         board = new int[4][4];
         initBoard();
-        runTests();
     }
 
     private void initBoard() {
