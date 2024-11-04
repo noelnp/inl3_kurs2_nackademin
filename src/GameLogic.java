@@ -119,25 +119,6 @@ public class GameLogic {
         }
     }
 
-    private void runTests() {
-        // Skriv ut det initierade och blandade brädet för att se hur det ser ut
-        System.out.println("Initial board:");
-        printBoard();
-
-        // Testa findPosition för att hitta en bricka, t.ex. bricka 1
-        int[] position = findPosition(1);
-        if (position != null) {
-            System.out.println("Position of brick 1: Row = " + position[0] + ", Column = " + position[1]);
-        } else {
-            System.out.println("Brick 1 not found.");
-        }
-
-        // Testa canMoveBrick för att se om bricka 1 kan flyttas
-        boolean canMove = canMoveBrick(1);
-        System.out.println("Can move brick 1: " + canMove);
-    }
-
-
     //Skapar metod för specialinställning i spelet
     public void setupWinningBoard(){
 
